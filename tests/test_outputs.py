@@ -28,7 +28,7 @@ def test_write_output_json_includes_metadata(tmp_path: Path):
         metadata=metadata,
     )
     payload = output_path.read_text(encoding="utf-8")
-    assert "\"meta\"" in payload
+    assert '"meta"' in payload
 
 
 def test_write_output_txt(tmp_path: Path):

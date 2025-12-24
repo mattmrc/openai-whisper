@@ -341,6 +341,7 @@ def filter_kwargs(kwargs: dict[str, Any]) -> dict[str, Any]:
     supported = set(signature.parameters.keys())
     return {key: value for key, value in kwargs.items() if key in supported}
 
+
 def validate_args(args: argparse.Namespace) -> list[str]:
     errors: list[str] = []
     if args.chunk_length is not None and args.chunk_length <= 0:
