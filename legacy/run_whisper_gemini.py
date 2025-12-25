@@ -1,5 +1,6 @@
-import sys
 import os
+import sys
+
 import mlx_whisper
 
 # --- CONFIGURATION ---
@@ -11,6 +12,7 @@ MODEL_NAME = "mlx-community/whisper-large-v3-turbo"
 
 
 # ---------------------
+
 
 def transcribe_audio():
     if len(sys.argv) < 2:
@@ -28,10 +30,7 @@ def transcribe_audio():
     print(f"🧠 Using Model: {MODEL_NAME}")
 
     # Run transcription
-    result = mlx_whisper.transcribe(
-        audio_path,
-        path_or_hf_repo=MODEL_NAME
-    )
+    result = mlx_whisper.transcribe(audio_path, path_or_hf_repo=MODEL_NAME)
 
     # Save file
     base_name = os.path.splitext(audio_path)[0]
